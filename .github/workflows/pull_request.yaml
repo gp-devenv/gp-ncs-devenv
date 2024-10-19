@@ -1,0 +1,54 @@
+#
+# gp-ncs-devenv
+# Copyright (c) 2025, Greg PFISTER. MIT License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+# Build and validate
+
+name: Pull request
+
+on:
+  # push:
+  #   branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build ghcr.io/gp-devenv/gp-ncs-devenv
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        ubuntuVersion: ['22.04', '24.04']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup buildx
+        run: (cd src && ./scripts/buildx/setup.sh)
+      - name: Build using ghcr.io/gp-devenv/gp-base-devenv:${{ matrix.ubuntuVersion }}
+        run: (cd src && ./scripts/buildx/build.sh $UBUNTU_VERSION)
+        env:
+          UBUNTU_VERSION: ${{ matrix.ubuntuVersion }}
+  cleanup:
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cleanup
+        uses: gp-devenv/gp-docker-image-cleanup@v2
+        with:
+          runAsUser: gpfister
+          token: ${{ secrets.GHCR_IO_TOKEN }}
+          retentionDays: 7
+          isOwnedByOrganization: true
+          testOnly: true
+# End

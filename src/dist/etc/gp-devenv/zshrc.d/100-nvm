@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#
+# gp-ncs-devenv
+# Copyright (c) 2025, Greg PFISTER. MIT License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+NVM_VERSION=0.40.0
+
+# Install nvm
+if [ ! -f ~/.cache/.nvm-$NVM_VERSION ]; then
+    if [ -d ~/.nvm ]; then rm -rf ~/.nvm; rm ~/.cache/.nvm*; fi
+    cp ~/.zshrc ~/.zshrc.bkp
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh | bash
+    mv ~/.zshrc.bkp ~/.zshrc
+
+    touch ~/.cache/.nvm-$NVM_VERSION
+fi
+
+# Set environment
+if [ -d ~/.nvm ]; then 
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+fi

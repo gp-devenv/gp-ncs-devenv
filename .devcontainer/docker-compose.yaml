@@ -1,0 +1,40 @@
+#
+# gp-ncs-devenv
+# Copyright (c) 2025, Greg PFISTER. MIT License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+name: gp-ncs-devenv
+
+# Services
+services:
+  gp-ncs-devenv:
+    container_name: gp-ncs-devenv
+    user: vscode
+    privileged: true
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ..:/workspace
+      - gp-ncs-devenv-home:/home
+      - gp-ncs-devenv-docker-data:/var/lib/docker
+    networks:
+      - gp-devenv-net
+
+volumes:
+  gp-ncs-devenv-home:
+    name: gp-ncs-devenv-home
+  gp-ncs-devenv-docker-data:
+    name: gp-ncs-devenv-docker-data
+
+networks:
+  gp-devenv-net:
+    name: gp-devenv-net

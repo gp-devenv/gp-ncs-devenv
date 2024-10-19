@@ -1,0 +1,27 @@
+#!/bin/sh
+
+#
+# gp-ncs-devenv
+# Copyright (c) 2025, Greg PFISTER. MIT License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+clear
+echo "Welcome to this dev container !"
+echo ""
+echo "For proper display of the shell, please install any Nerd Font and setup you "
+echo "terminal and/or vscode terminal on your computer. DO NOT INSTALL IT ON THIS"
+echo "CONTAINER OR ON A REMOTE HOST."
+echo ""
+echo "  -> Nerd Fonts: https://www.nerdfonts.com"
+echo ""
+echo "nrfutil version: $(nrfutil -V | grep -n '' | grep -E '^1:|[^:]*:/dev' | sed 's/[^:]*://') (path $(which nrfutil))"
+echo ""
+echo "Please report any issue to https://github.com/gp-devenv/gp-ncs-devenv/issues"

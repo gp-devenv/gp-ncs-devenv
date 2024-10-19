@@ -1,0 +1,44 @@
+#
+# gp-ncs-devenv
+# Copyright (c) 2025, Greg PFISTER. MIT License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+FROM ghcr.io/gp-devenv/gp-base-devenv:24.04-1
+
+LABEL org.opencontainers.image.source=https://github.com/gp-devenv/gp-ncs-devenv
+LABEL org.opencontainers.image.description="NCS dev container for VS Code running Ubuntu 24.04"
+LABEL org.opencontainers.image.licenses=MIT
+
+USER root
+
+# Update all
+RUN apt-get update && \
+    apt-get full-upgrade -y && \
+    apt-get autoremove -y && \
+    apt-get autoclean
+
+# Install nrfutil
+RUN curl https://files.nordicsemi.com/artifactory/swtools/external/nrfutil/executables/x86_64-unknown-linux-gnu/nrfutil -o /tmp/nrfutil && \
+    chmod +x /tmp/nrfutil  && \ 
+    install /tmp/nrfutil /usr/local/bin && \
+    rm /tmp/nrfutil
+
+# Update nrfutil
+RUN nrfutil self-upgrade
+
+# Install packages
+RUN nrfutil install sdk-manager toolchain-manager device
+
+EXPOSE 80
+
+ENTRYPOINT ["sudo", "/entrypoint.sh"]
+
+# End
