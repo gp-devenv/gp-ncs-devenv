@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: '1.0.0'
+          ref: '1.0.1'
       - name: Setup buildx
         run: (cd src && ./scripts/buildx/setup.sh)
       - name: Authenticating
