@@ -22,8 +22,8 @@ fi
 
 VERSION=$(echo "`cat .version`-dev")
 IMAGE_NAME=$(cat .image_name)
-IMAGE="$IMAGE_NAME:$1-$2-$VERSION"
-CONTAINER=$(echo "`cat .image_name | sed -e 's/ghcr.io\///g' -e 's/gp-devenv\///g'`-$1-$2-$VERSION")
+IMAGE="$IMAGE_NAME:$1-$VERSION"
+CONTAINER=$(echo "`cat .image_name | sed -e 's/ghcr.io\///g' -e 's/gp-devenv\///g'`-$1-$VERSION")
 
 docker container start $CONTAINER
 

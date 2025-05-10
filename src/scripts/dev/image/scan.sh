@@ -23,7 +23,7 @@ fi
 VERSION="`cat .version`-dev"
 DOCKERFILE=`echo "./Dockerfile."$1`
 IMAGE_NAME="`cat .image_name`"
-IMAGE="$IMAGE_NAME:$1-$2-$VERSION"
+IMAGE="$IMAGE_NAME:$1-$VERSION"
 
 if [ ! -f "$DOCKERFILE" ]; then
     echo "Dockerfile '$DOCKERFILE' not found"
