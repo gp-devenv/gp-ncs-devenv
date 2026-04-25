@@ -1,6 +1,6 @@
 #
 # gp-ncs-devenv
-# Copyright (c) 2025, Greg PFISTER. MIT License.
+# Copyright (c) 2025-2026, Greg PFISTER. MIT License.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -26,7 +26,7 @@ RUN apt-get update && \
     apt-get autoclean
 
 # Install nrfutil
-RUN curl https://files.nordicsemi.com/artifactory/swtools/external/nrfutil/executables/x86_64-unknown-linux-gnu/nrfutil -o /tmp/nrfutil && \
+RUN curl https://files.nordicsemi.com/artifactory/swtools/external/nrfutil/executables/$(uname -m)-unknown-linux-gnu/nrfutil -o /tmp/nrfutil && \
     chmod +x /tmp/nrfutil  && \ 
     install /tmp/nrfutil /usr/local/bin && \
     rm /tmp/nrfutil
