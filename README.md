@@ -4,13 +4,15 @@
 
 [![Ubuntu](https://img.shields.io/badge/ubuntu-22.04-orange)](https://ubuntu.com)
 [![Ubuntu](https://img.shields.io/badge/ubuntu-24.04-orange)](https://ubuntu.com)
+[![Ubuntu](https://img.shields.io/badge/ubuntu-26.04-orange)](https://ubuntu.com)
 
-![ARM64](https://img.shields.io/badge/linux%2farm64-Yes-red)
+<!-- ![ARM64](https://img.shields.io/badge/linux%2farm64-Yes-red) -->
+
 ![AMD64](https://img.shields.io/badge/linux%2famd64-Yes-red)
 
 # gp-ncs-devenv: Build Tempalte dev containers for VSCode
 
-> Copyright (c) 2023-2025, Greg PFISTER. MIT License
+> Copyright (c) 2025-2026-2025, Greg PFISTER. MIT License
 
 ## About
 
@@ -226,12 +228,12 @@ _`Base image version` correspond to the underlying base image that can be found
 
 |   Image   |            Base image version            |   Ubuntu    | amd64 | arm64 | Daily build |
 | :-------: | :--------------------------------------: | :---------: | :---: | :---: | :---------: |
-|   22:04   | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |     Yes     |
-| 22:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |     Yes     |
-|   24:04   | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |     Yes     |
-| 24:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |     Yes     |
-|   26:04   | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |   X   |     Yes     |
-| 26:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |   X   |     Yes     |
+|   22:04   | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |       |     Yes     |
+| 22:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |       |     Yes     |
+|   24:04   | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |       |     Yes     |
+| 24:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |       |     Yes     |
+|   26:04   | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |       |     Yes     |
+| 26:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |       |     Yes     |
 
 <div id="faq" />
 

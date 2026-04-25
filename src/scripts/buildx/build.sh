@@ -2,7 +2,7 @@
 
 #
 # gp-ncs-devenv
-# Copyright (c) 2025, Greg PFISTER. MIT License.
+# Copyright (c) 2025-2026, Greg PFISTER. MIT License.
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -36,7 +36,7 @@ if [ ! -f "$DOCKERFILE" ]; then
 fi
 
 docker buildx build --no-cache \
-                    --platform linux/amd64,linux/arm64 \
+                    --platform linux/amd64 \
                     --label org.opencontainers.image.source="https://github.com/gp-devenv/gp-ncs-devenv" \
                     --label org.opencontainers.image.description="NCS dev container for VS Code running Ubuntu $1" \
                     --label org.opencontainers.image.licenses=MIT \
