@@ -6,7 +6,6 @@
 [![Ubuntu](https://img.shields.io/badge/ubuntu-24.04-orange)](https://ubuntu.com)
 
 ![ARM64](https://img.shields.io/badge/linux%2farm64-Yes-red)
-![ARMV7](https://img.shields.io/badge/linux%2farm%2fv7-Yes-red)
 ![AMD64](https://img.shields.io/badge/linux%2famd64-Yes-red)
 
 # gp-ncs-devenv: Build Tempalte dev containers for VSCode
@@ -91,8 +90,8 @@ You will need to create a multiarch builder:
 ./src/scripts/buildx/setup.sh
 ```
 
-On successful completion, it should at least have platforms `linux/arm64`,
-`linux/arm/v7` and `linux/amd64`:
+On successful completion, it should at least have platforms `linux/arm64` and
+`linux/amd64`:
 
 ```sh
 [+] Building 5.8s (1/1) FINISHED
@@ -225,12 +224,14 @@ make sure the `vscode` is the last one activate.
 _`Base image version` correspond to the underlying base image that can be found
 [here](https://github.com/gp-devenv/gp-base-devenv/pkgs/container/gp-base-devenv)_
 
-|   Image   |            Base image version            |   Ubuntu    | amd64 | arm64 | arm/v7 | Daily build |
-| :-------: | :--------------------------------------: | :---------: | :---: | :---: | :----: | :---------: |
-|   22:04   | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |   X    |     Yes     |
-| 22:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |   X    |     Yes     |
-|   24:04   | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |   X    |     Yes     |
-| 24:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |   X    |     Yes     |
+|   Image   |            Base image version            |   Ubuntu    | amd64 | arm64 | Daily build |
+| :-------: | :--------------------------------------: | :---------: | :---: | :---: | :---------: |
+|   22:04   | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |     Yes     |
+| 22:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:22.04-1 | 22.04 (LTS) |   X   |   X   |     Yes     |
+|   24:04   | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |     Yes     |
+| 24:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:24.04-1 | 24.04 (LTS) |   X   |   X   |     Yes     |
+|   26:04   | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |   X   |     Yes     |
+| 26:04-1.x | ghcr.io/gp-devenv/gp-base-devenv:26.04-1 | 26.04 (LTS) |   X   |   X   |     Yes     |
 
 <div id="faq" />
 

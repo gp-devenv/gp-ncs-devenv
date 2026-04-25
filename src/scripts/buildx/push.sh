@@ -36,7 +36,7 @@ if [ ! -f "$DOCKERFILE" ]; then
 fi
 
 docker buildx build --push \
-                    --platform linux/amd64 \
+                    --platform linux/amd64,linux/arm64 \
                     --label org.opencontainers.image.source="https://github.com/gp-devenv/gp-ncs-devenv" \
                     --label org.opencontainers.image.description="NCS dev container for VS Code running Ubuntu $1" \
                     --label org.opencontainers.image.licenses=MIT \

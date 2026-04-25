@@ -29,9 +29,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          ref: '1.0.1'
+          ref: '1.1.0'
       - name: Setup buildx
         run: (cd src && ./scripts/buildx/setup.sh)
       - name: Authenticating
@@ -48,7 +48,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Cleanup
         uses: gp-devenv/gp-docker-image-cleanup@v2
         with:
