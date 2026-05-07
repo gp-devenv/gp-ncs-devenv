@@ -60,7 +60,7 @@ For example:
 | ghcr.io/gp-devenv/gp-ncs-devenv:24.04       | The latest build using Ubuntu 24.04       |
 | ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1     | The latest build 1.x using Ubuntu 24.04   |
 | ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1.1   | The latest build 1.1.x using Ubuntu 24.04 |
-| ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1.1.0 | The latest build 1.1.0 using Ubuntu 24.04 |
+| ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1.1.1 | The latest build 1.1.1 using Ubuntu 24.04 |
 | ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1.0   | The latest build 1.0.x using Ubuntu 24.04 |
 | ghcr.io/gp-devenv/gp-ncs-devenv:24.04-1.0.0 | The latest build 1.0.0 using Ubuntu 24.04 |
 
